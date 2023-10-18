@@ -24,3 +24,8 @@ All operations of Customer like as ADD NEW, FIND, FIND ALL, UPDATE, DELETE is in
 6. Success PAGE
    ![success page](https://github.com/mustafa-senyuz/CUSTOMER_CRUD_SpringBOOT3-thymeleaf-mysql/assets/113122475/d5d4a466-5fb1-4a81-9859-56e8a8fa998b)
 
+7. Check the 'customer' table in mysql with customerdb
+   ![customer table](https://github.com/mustafa-senyuz/CUSTOMER_CRUD_SpringBOOT3-thymeleaf-mysql/assets/113122475/a097e928-6a29-42b5-b1b1-ad7a2f65ecc4)
+
+8. And try all other operations too. 
+
