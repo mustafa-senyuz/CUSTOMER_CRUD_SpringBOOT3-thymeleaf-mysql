@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xlmns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>RECORDED</title>
+</head>
+<body>
+
+		Recorded(new or updated) CUSTOMER to DB ==>
+		
+							<br><br>
+						
+							NAME  : <span type = "text" th:text="${modelname}"/>
+							
+						    <br><br>
+							
+							EMAIL : <span type = "text" th:text="${modelemail}"/>
+																																
+		<br><br>				
+																								
+
+		
+		<form th:action="@{/}" method="get">
+
+		        <input type="submit" value="RETURN HOME"  id="addButton">
+		    </form>
+		<br>
+							
+</body>
+</html>
