@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html xlmns:th="http://www.thymeleaf.org">
 <head>
@@ -172,4 +173,181 @@
 		
 
 </body>
+=======
+<!DOCTYPE html>
+<html xlmns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Form</title>
+																														    
+    <style>
+			form {
+			    display: flex;
+			    align-items: center; /* Elemanları dikey eksende hizalar */
+			}
+			
+			input[type="text"] {
+			    margin-right: 10px; /* Text alanının sağ tarafında 10px boşluk bırakır */
+			}
+		    input[type="submit"] {
+			    margin-right: 10px; /* Text alanının sağ tarafında 10px boşluk bırakır */
+			}
+			 input[type="number"] {
+			    margin-right: 10px; /* Text alanının sağ tarafında 10px boşluk bırakır */
+			}
+																																	
+			form input[type="submit"] {
+			    background-color: #4CAF50;
+			    color: white; 
+			    padding: 10px 20px;
+			    border: none;
+			    border-radius: 5px;
+			    cursor: pointer;
+			}
+			
+			form input[type="submit"]:hover {
+			    background-color: #45a049;
+			}
+			
+			
+			        #deleteForm {
+            display: flex;
+            align-items: center;
+            margin-top: 20px; /* Yeterli boşluk bırakmak için formun üst tarafına 20px margin ekler */
+        }
+
+
+<!--SILME ISLEMI-->
+        #deleteForm input[type="number"] {
+            margin-right: 10px;
+        }
+
+        #deleteForm input[type="button"] {
+            background-color: #f44336;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #deleteForm input[type="button"]:hover {
+            background-color: #d32f2f;
+        }
+        
+        
+        
+        #addButton {
+		    margin-left: 38px; /* 38 px whitespace */
+		}
+		
+		#findallbutton {
+		    margin-left: 30px; /* 30 px whitespace */
+		}
+        
+        
+        
+    </style>  
+    
+<script>
+    function deleteRequest() {
+        const personalNumber = document.getElementById("personalnumber").value;
+        
+
+        
+        if (!personalNumber || isNaN(parseInt(personalNumber))) {
+            console.error("Invalid personal number");
+            alert("ID field is required!"); // Kullanıcıya uyarı mesajı gösterir
+            return;
+        }
+
+        fetch(`http://localhost:8080/delete?personalnumber=${personalNumber}`, {
+																	            method: "DELETE",
+																	            headers: {
+																	                "Content-Type": "application/json"
+																	            }
+        }).then(response => {
+						   if (response.ok) {
+						            console.log("DELETE request was sent successfully ");
+						            return response.text();
+						        } else {
+						            console.log("DELETE request failed!!!");
+						            throw new Error("DELETE request failed");
+						        }
+						    }).then(htmlContent => {
+										 
+										    var responseContainer = document.getElementById('response-container');
+										
+										    if (htmlContent && htmlContent.trim() !== "") {
+ 
+										        responseContainer.innerHTML = htmlContent;
+										        
+										    } else {
+ 
+										        responseContainer.innerHTML = "Sunucudan gelen içerik boş veya geçersiz.";
+										    }
+										}).catch(error => {
+										    console.error("Error occurred:", error);
+										});
+
+    }
+</script>
+              
+</head>
+
+<body>
+    
+		
+		<h1>Customer Find & Edit</h1>
+		
+			<form th:action="@{/customerform}" method="get">
+		    	<label for="personals">ADD    NEW   CUSTOMER </label> 
+		        <input type="submit" value="ADD NEW"  id="addButton">
+		    </form>
+		    <br>
+		
+		
+		    <form th:action="@{/find}" method="get">
+		        <label for="personalNUMBER">ID: </label>
+		        <input type="number" id="personalNUMBER" name="personalNUMBER" required><br><br>
+		        <input type="submit" value="FIND">
+		    </form>
+		    <br>
+		    
+		    <form th:action="@{/findall}" method="get">
+		    	<label for="personals">FIND ALL CUSTOMERS  </label>
+		        <input type="submit" value="FIND ALL"  id="findallbutton">
+		    </form>
+		    <br>	
+		    	    
+		    <form th:action="@{/update}" method="POST">
+		        <label for="personalTOupdate">ID: </label>
+		        <input type="number" id="personalTOupdate" name="personalTOupdate" required><br><br>
+		        <input type="submit" value="UPDATE">
+		    </form>
+		    <br>
+
+			<!--		
+			<form th:action="@{/delete}" method="POST">
+			    <input type="hidden" name="_method" value="DELETE">
+			    <input type="submit" value="DELETE">
+			</form>
+			-->
+			
+			<form id="deleteForm">
+			    <label for="personalnumber">ID:</label>
+			    <input type="number" id="personalnumber" name="personalnumber" required>
+			    <input type="button" value="DELETE" onclick="deleteRequest()">
+			</form>
+			
+			
+			
+			
+			<div id="response-container"></div>
+		
+
+</body>
+
+>>>>>>> e08022f (all is added)
 </html>

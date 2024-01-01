@@ -15,4 +15,6 @@ public interface CustomerDAO {
 	Customer findbyID(int personalnumber);
 
 	void updateCustomerbyID(int personalnumber, Customer updatedCustomer) throws Exception;
+ 
+ 
 }
