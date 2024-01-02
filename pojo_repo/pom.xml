@@ -1,15 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<<<<<<< HEAD
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
-=======
  
 
 <project xmlns="http://maven.apache.org/POM/4.0.0" 
 		 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
  
->>>>>>> e08022f (all is added)
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<groupId>org.springframework.boot</groupId>
@@ -39,8 +34,6 @@
 		</dependency>
 
 		<dependency>
-<<<<<<< HEAD
-=======
  
 		    <groupId>org.springframework.security</groupId>
 		    <artifactId>spring-security-web</artifactId>
@@ -48,7 +41,6 @@
 
 		<dependency>
  
->>>>>>> e08022f (all is added)
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-devtools</artifactId>
 			<scope>runtime</scope>
@@ -71,9 +63,6 @@
 		    <groupId>org.springframework.boot</groupId>
 		    <artifactId>spring-boot-starter-thymeleaf</artifactId>
 		</dependency>
-<<<<<<< HEAD
-
-=======
  
 		
 		<!--Swagger-->
@@ -104,9 +93,21 @@
 		    <artifactId>spring-boot-starter-hateoas</artifactId>
 		</dependency>
 		
+		<!--SWAGGER-->
+		<dependency>
+		    <groupId>io.springfox</groupId>
+		    <artifactId>springfox-swagger2</artifactId>
+		    <version>3.0.0</version>
+		</dependency>
+		<dependency>
+		    <groupId>io.springfox</groupId>
+		    <artifactId>springfox-swagger-ui</artifactId>
+		    <version>3.0.0</version>
+		</dependency>
+
+		
 		
  
->>>>>>> e08022f (all is added)
 	</dependencies>
 
 
@@ -120,8 +121,5 @@
 		</plugins>
 	</build>
 
-<<<<<<< HEAD
-=======
  
->>>>>>> e08022f (all is added)
 </project>
